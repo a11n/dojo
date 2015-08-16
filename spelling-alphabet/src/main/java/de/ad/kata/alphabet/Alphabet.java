@@ -12,6 +12,15 @@ public class Alphabet {
     return lookUpWordFor(character);
   }
 
+  public String spell(String word) {
+    StringBuilder builder = new StringBuilder();
+    
+    for(char character : word.toCharArray())
+      builder.append(spell(character) + " ");
+    
+    return builder.toString();
+  }
+
   private String lookUpWordFor(final char character) {
     return Arrays.stream(WORDS)
         .filter(word -> word.indexOf(Character.toUpperCase(character)) == 0)
