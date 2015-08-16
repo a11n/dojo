@@ -8,6 +8,6 @@ import static org.junit.Assert.assertThat;
 public class RomanNumeralTest {
   @Test
   public void testConversionToRomanNumeral() throws Exception {
-    assertThat(RomanNumeral.of(1), is("I"));
+    assertThat(RomanNumeral.of(1).toString(), is("I"));
   }
 }
