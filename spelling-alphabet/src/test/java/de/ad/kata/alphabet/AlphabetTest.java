@@ -17,8 +17,7 @@ public class AlphabetTest {
 
   @Test
   public void testCharacterSpelling() throws Exception {
-    String actual = alphabet.spell('a');
-
-    assertThat(actual, is("alfa"));
+    assertThat(alphabet.spell('a'), is("alfa"));
+    assertThat(alphabet.spell('b'), is("bravo"));
   }
 }
