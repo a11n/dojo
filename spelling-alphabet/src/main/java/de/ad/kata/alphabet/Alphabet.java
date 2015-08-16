@@ -16,7 +16,7 @@ public class Alphabet {
     StringBuilder builder = new StringBuilder();
     
     for(char character : word.toCharArray())
-      builder.append(spell(character) + " ");
+      builder.append(spell(character)).append(" ");
     
     return builder.toString();
   }
