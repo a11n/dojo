@@ -1,6 +1,8 @@
 package de.ad.kata.alphabet;
 
 import java.util.Arrays;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class Alphabet {
   private static final String[] WORDS =
@@ -14,18 +16,24 @@ public class Alphabet {
 
   public String spell(String word) {
     StringBuilder builder = new StringBuilder();
-    
-    for(char character : word.toCharArray())
+
+    for (char character : word.toCharArray())
       builder.append(spell(character)).append(" ");
-    
+
     return builder.toString();
   }
 
-  private String lookUpWordFor(final char character) {
-    return Arrays.stream(WORDS)
-        .filter(word -> word.indexOf(Character.toUpperCase(character)) == 0)
-        .findFirst()
-        .orElseThrow(() -> new IllegalArgumentException(
-            String.format("'%s' cannot be spelled.", character)));
+  private String lookUpWordFor(char character) {
+    return Arrays.stream(WORDS).filter(startsWith(character)).findFirst()
+        .orElseThrow(illegal(character));
+  }
+  
+  private Predicate<String> startsWith(char character){
+    return word -> word.indexOf(Character.toUpperCase(character)) == 0;
+  }
+  
+  private Supplier<RuntimeException> illegal(char character){
+    return () -> new IllegalArgumentException(
+        String.format("'%s' cannot be spelled.", character));
   }
 }
