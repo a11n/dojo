@@ -2,3 +2,5 @@ rootProject.name = 'dojo'
 
 include 'spelling-alphabet'
 
+include 'roman-numerals'
+
