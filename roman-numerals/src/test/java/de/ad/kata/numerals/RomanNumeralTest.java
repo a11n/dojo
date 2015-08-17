@@ -44,4 +44,9 @@ public class RomanNumeralTest {
     assertThat(RomanNumeral.of(2499).toString(), is("MMCDXCIX"));
     assertThat(RomanNumeral.of(3999).toString(), is("MMMCMXCIX"));
   }
+
+  @Test
+  public void testConversionOfRomanNumeral() throws Exception {
+    assertThat(RomanNumeral.of("I").toInt(), is(1));
+  }
 }
