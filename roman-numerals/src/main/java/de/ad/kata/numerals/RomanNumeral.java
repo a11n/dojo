@@ -11,9 +11,15 @@ public class RomanNumeral {
     this.number = number;
   }
 
+  private RomanNumeral(String numeral) {
+    number = fromString(numeral);
+  }
+
   public static RomanNumeral of(int number) {
     return new RomanNumeral(number);
   }
+
+  public static RomanNumeral of(String numeral) { return new RomanNumeral(numeral); }
 
   @Override public String toString() {
     StringBuilder builder = new StringBuilder();
@@ -24,5 +30,13 @@ public class RomanNumeral {
     }
 
     return builder.toString();
+  }
+
+  public int toInt() {
+    return number;
+  }
+
+  private int fromString(String numeral) {
+    return 1;
   }
 }
