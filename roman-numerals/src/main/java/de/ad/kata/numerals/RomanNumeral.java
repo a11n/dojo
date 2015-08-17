@@ -19,7 +19,9 @@ public class RomanNumeral {
     return new RomanNumeral(number);
   }
 
-  public static RomanNumeral of(String numeral) { return new RomanNumeral(numeral); }
+  public static RomanNumeral of(String numeral) {
+    return new RomanNumeral(numeral);
+  }
 
   @Override public String toString() {
     StringBuilder builder = new StringBuilder();
@@ -37,6 +39,13 @@ public class RomanNumeral {
   }
 
   private int fromString(String numeral) {
-    return 1;
+    int number = 0;
+    for (int i = 0; i < SYMBOLS.length; i++) {
+      for (; numeral.startsWith(SYMBOLS[i]); numeral = numeral.substring(SYMBOLS[i].length())) {
+        number += VALUES[i];
+      }
+    }
+
+    return number;
   }
 }

@@ -48,5 +48,39 @@ public class RomanNumeralTest {
   @Test
   public void testConversionOfRomanNumeral() throws Exception {
     assertThat(RomanNumeral.of("I").toInt(), is(1));
+    assertThat(RomanNumeral.of("II").toInt(), is(2));
+    assertThat(RomanNumeral.of("III").toInt(), is(3));
+
+    assertThat(RomanNumeral.of("IV").toInt(), is(4));
+    assertThat(RomanNumeral.of("V").toInt(), is(5));
+    assertThat(RomanNumeral.of("VI").toInt(), is(6));
+
+    assertThat(RomanNumeral.of("IX").toInt(), is(9));
+    assertThat(RomanNumeral.of("X").toInt(), is(10));
+    assertThat(RomanNumeral.of("XI").toInt(), is(11));
+
+    assertThat(RomanNumeral.of("XIV").toInt(), is(14));
+    assertThat(RomanNumeral.of("XV").toInt(), is(15));
+    assertThat(RomanNumeral.of("XVI").toInt(), is(16));
+
+    assertThat(RomanNumeral.of("XLIX").toInt(), is(49));
+    assertThat(RomanNumeral.of("L").toInt(), is(50));
+    assertThat(RomanNumeral.of("LI").toInt(), is(51));
+
+    assertThat(RomanNumeral.of("XCIX").toInt(), is(99));
+    assertThat(RomanNumeral.of("C").toInt(), is(100));
+    assertThat(RomanNumeral.of("CI").toInt(), is(101));
+
+    assertThat(RomanNumeral.of("CDXCIX").toInt(), is(499));
+    assertThat(RomanNumeral.of("D").toInt(), is(500));
+    assertThat(RomanNumeral.of("DI").toInt(), is(501));
+
+    assertThat(RomanNumeral.of("CMXCIX").toInt(), is(999));
+    assertThat(RomanNumeral.of("M").toInt(), is(1000));
+    assertThat(RomanNumeral.of("MI").toInt(), is(1001));
+
+    assertThat(RomanNumeral.of("MCCXLIX").toInt(), is(1249));
+    assertThat(RomanNumeral.of("MMCDXCIX").toInt(), is(2499));
+    assertThat(RomanNumeral.of("MMMCMXCIX").toInt(), is(3999));
   }
 }
